@@ -1,0 +1,12 @@
+.message-form {
+    display: flex;
+    width: 100%;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    gap: 0.5rem;
+}
+
+.message-input {
+    flex-grow: 1;
+}

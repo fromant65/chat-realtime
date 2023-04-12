@@ -1,0 +1,28 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --base-color: #6EB2E6;
+  --light-color: #C7E7FF;
+  --dark-color: #1F3140;
+  --dark-neutral-color: #2B4C66;
+  --light-neutral-color: #e8f5ff;
+}
+
+::-webkit-scrollbar {
+  width: 0.75rem;
+  /* Ancho de la scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--light-color);
+  /* Color de la scrollbar */
+  border-radius: 0.25rem;
+  /* Radio de la scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--light-neutral-color);
+  /* Color de fondo de la scrollbar */
+}

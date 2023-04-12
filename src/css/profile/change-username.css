@@ -1,0 +1,8 @@
+.change-username {
+    padding: 1rem;
+}
+
+.username {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,36 @@
+.form-input {
+    border: none;
+    border-bottom: 1px solid var(--light-neutral-color);
+    padding: 0.5rem;
+
+}
+
+.form-input:focus {
+    border: none;
+    outline: 1px solid var(--light-color);
+    border-radius: 0.5rem;
+}
+
+.form-button {
+    border: 1px solid var(--light-neutral-color);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--light-neutral-color);
+    color: var(--dark-color);
+    font-weight: bold;
+}
+
+.form-button:hover,
+.form-button:focus {
+    cursor: pointer;
+    background-color: var(--light-color);
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-content: center;
+    min-width: 200px;
+    width: 300px;
+    gap: 0.5rem;
+}

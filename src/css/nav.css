@@ -1,0 +1,24 @@
+.nav-container {
+    display: flex;
+    gap: 1em;
+    width: 100%;
+    border-bottom: 1px solid var(--light-neutral-color);
+    padding: 0.5rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.nav-button {
+    border: 1px solid var(--light-neutral-color);
+    background-color: var(--light-neutral-color);
+    font-size: 1em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    color: var(--dark-color);
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    cursor: pointer;
+    background-color: var(--light-color);
+}

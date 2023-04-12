@@ -1,0 +1,23 @@
+.room-config-container {
+    padding: 1rem;
+    width: 300px;
+}
+
+.room,
+.room-input,
+.room-button {
+    width: 100%;
+    color: var(--dark-color);
+}
+
+.room {
+    margin: 0.5rem;
+    margin-left: 0;
+}
+
+.room-input {
+    border: 1px solid var(--light-color) !important;
+    border-radius: 0.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
