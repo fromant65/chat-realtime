@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { auth, firestore } from "../../../firebase";
+import { auth, firestore } from "../../../config/firebase";
 import { addDoc, collection } from "firebase/firestore";
 import { RoomContext } from "./Chat";
 import "../../css/chat/send-message.css";

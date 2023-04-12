@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { auth } from "../../../firebase";
+import { auth } from "../../../config/firebase";
 import { signOut } from "firebase/auth";
 import { UserContext } from "../../App";
 

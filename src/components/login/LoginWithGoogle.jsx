@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { auth } from "../../../firebase";
-import { googleProvider } from "../../../firebase";
+import { auth } from "../../../config/firebase";
+import { googleProvider } from "../../../config/firebase";
 import { signInWithPopup } from "firebase/auth";
 import { UserContext } from "../../App";
 const LoginWithGoogle = () => {

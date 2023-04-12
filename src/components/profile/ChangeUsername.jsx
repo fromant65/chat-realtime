@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { app } from "../../../firebase";
+import { app } from "../../../config/firebase";
 import { getAuth } from "firebase/auth";
 import { updateProfile } from "firebase/auth";
 import "../../css/profile/change-username.css";
