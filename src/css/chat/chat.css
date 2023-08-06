@@ -1,6 +1,12 @@
+.main-page {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .chat {
     display: grid;
     place-items: center;
+    flex-grow: 2;
 }
 
 .chat-window {

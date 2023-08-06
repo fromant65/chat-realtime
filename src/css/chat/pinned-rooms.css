@@ -1,0 +1,25 @@
+.pinned-rooms__container {
+    /*Para el componente padre*/
+    flex-grow: 1;
+    /*Para el componente hijo*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pinned-room,
+.pin-room {
+    background-color: var(--light-color);
+    display: block;
+    margin: 0.5rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    width: 80%;
+}
+
+.pinned-room:hover,
+.pin-room:hover {
+    cursor: pointer;
+    background-color: var(--base-color);
+}

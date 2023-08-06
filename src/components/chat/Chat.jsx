@@ -5,7 +5,7 @@ import RoomConfig from "./RoomConfig";
 import ProfileConfig from "../profile/ProfileConfig";
 import Nav from "../Nav";
 import "../../css/chat/chat.css";
-
+import PinnedRooms from "./PinnedRooms";
 export const RoomContext = React.createContext();
 
 const Chat = () => {
@@ -16,11 +16,14 @@ const Chat = () => {
       <RoomContext.Provider value={{ room, setRoom }}>
         <Nav setPage={setPage} />
         {page === "chat" ? (
-          <div className="chat">
-            <RoomConfig />
-            <div className="chat-window">
-              <Messages />
-              <SendMessage />
+          <div className="main-page">
+            <PinnedRooms />
+            <div className="chat">
+              <RoomConfig />
+              <div className="chat-window">
+                <Messages />
+                <SendMessage />
+              </div>
             </div>
           </div>
         ) : page === "profile" ? (
