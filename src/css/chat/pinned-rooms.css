@@ -7,7 +7,13 @@
     align-items: center;
 }
 
-.pinned-room,
+.pinned-room {
+    display: flex;
+    width: 90%;
+}
+
+.pinned-room__button,
+.unpin-room__button,
 .pin-room {
     background-color: var(--light-color);
     display: block;
@@ -15,11 +21,15 @@
     padding: 1rem;
     border: none;
     border-radius: 0.5rem;
-    width: 80%;
 }
 
-.pinned-room:hover,
+.pinned-room__button:hover,
+.unpin-room__button:hover,
 .pin-room:hover {
     cursor: pointer;
     background-color: var(--base-color);
+}
+
+.pinned-room__button {
+    flex-grow: 1;
 }

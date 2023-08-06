@@ -49,7 +49,6 @@ const PinnedRooms = () => {
         }
       } else {
         // Si el documento del usuario no existe, crea uno nuevo con el array "rooms"
-        console.log(currentUser.email);
         await addDoc(firestoreRef, {
           userid: currentUser.email,
           rooms: [currentRoom],
@@ -63,11 +62,32 @@ const PinnedRooms = () => {
     }
   }
 
+  async function unpinRoom(room) {
+    try {
+      const firestoreRef = collection(firestore, "userRooms");
+      const roomsQuery = query(
+        firestoreRef,
+        where("userid", "==", currentUser.email)
+      );
+      const querySnapshot = await getDocs(roomsQuery);
+      const document = querySnapshot.docs[0];
+      let rooms = document.data().rooms || [];
+
+      // removemos el room que se intenta quitar de la lista
+      rooms = rooms.filter((_room) => _room !== room);
+      // Actualiza el array "rooms" en el documento del usuario
+      await updateDoc(document.ref, { rooms: rooms });
+      setPinnedRooms(rooms);
+    } catch (error) {
+      console.error("Error al agregar el room al usuario:", error);
+    }
+  }
+
   useEffect(() => {
     getPinnedRooms().then((data) => {
-      console.log(data);
       setPinnedRooms(data);
-      const pinButton = (document.querySelector(".pin-room").disabled = false);
+      const pinButton = document.querySelector(".pin-room");
+      pinButton.disabled = false;
     });
   }, []);
   return (
@@ -76,13 +96,20 @@ const PinnedRooms = () => {
       {pinnedRooms
         ? pinnedRooms.map((currentRoom) => {
             return (
-              <button
-                className="pinned-room"
-                key={currentRoom}
-                onClick={() => setRoom(currentRoom)}
-              >
-                {currentRoom}
-              </button>
+              <div key={currentRoom} className="pinned-room">
+                <button
+                  className="pinned-room__button"
+                  onClick={() => setRoom(currentRoom)}
+                >
+                  {currentRoom}
+                </button>
+                <button
+                  className="unpin-room__button"
+                  onClick={() => unpinRoom(currentRoom)}
+                >
+                  Unpin Room
+                </button>
+              </div>
             );
           })
         : ""}
